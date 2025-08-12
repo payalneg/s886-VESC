@@ -176,13 +176,9 @@
     (loopwhile t {
         (let ((temp (setq temp (* (get-adc 3) 100))))
             (progn
-                (print (to-str temp))
-                (print (to-str temp-buffer))
                 (setq temp-buffer (+ temp-buffer temp))
                 (setq temp-times (+ temp-times 1))
-                (print (to-str temp-buffer))
-                (print (to-str temp-times))
-                
+
                 (if (> temp-times 20)
                     (progn
                         (let ((out-temp (/ temp-buffer temp-times)))
